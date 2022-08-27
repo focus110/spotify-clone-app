@@ -16,6 +16,11 @@ const reducer = (state, action) => {
         user: action.user,
       };
 
+    case "SET_TOKEN":
+      return {
+        ...state,
+        token: action._token,
+      };
     default:
       return state;
   }
