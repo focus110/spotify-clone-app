@@ -35,13 +35,20 @@ function App() {
           user: user,
         });
       });
+
+      spotify.getUserPlaylists().then((playlist) => {
+        dispatch({
+          type: "SET_PLAYLISTS",
+          playlists: playlist,
+        });
+      });
     }
 
     console.log("tk", _token);
     // eslint-disable-next-line
   }, []);
 
-  return <div className="app">{token ? <Player /> : <Login />}</div>;
+  return <div className="app">{true ? <Player /> : <Login />}</div>;
 }
 
 export default App;
